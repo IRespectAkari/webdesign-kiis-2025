@@ -5,11 +5,15 @@ body > div {
   margin: 0 5em;
 
   aside {
-    /* width: 15vw; */
+    min-width: 20vw;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 
     > span:first-child {
       border-bottom: solid black 1px;
+      text-align: center;
     }
 
     form {
@@ -25,7 +29,7 @@ body > div {
     }
   }
   main {
-    width: 75vw;
+    width: 60vw;
   }
 }
 

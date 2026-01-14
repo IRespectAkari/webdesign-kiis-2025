@@ -1,0 +1,58 @@
+
+function addData(e) {
+  const form = $("form");
+
+  const name    = form.elements["name"].value;
+  const mail    = form.elements["mail"].value;
+  const fruits  = form.elements["fruits"].value;
+  const message = form.elements["message"].value;
+
+
+  if(!name || !mail || !message) return;
+
+  $("main").append(create("p", [`名前：`, name]));
+  $("main").append(create("p", [`選んだ果物：`, fruits]));
+  $("main").append(create("p", [`メッセージ：`, message]));
+
+  document.asideForm.reset()
+}
+
+const radio = ["いちご", "バナナ", "もも"]
+  .map(t => [create("input", null, {type: "radio", name: "fruits", value: t}), create("span", t)])
+  .map(Wrap("label"));
+const formParts = [
+  create("span", "お名前"),
+  create("input", null, { name: "name", type: "text" }),
+  create("span", "メールアドレス"),
+  create("input", null, { name: "mail", type: "email" }),
+  create("span", "好きな果物を一つ選んでね"),
+  create("div", radio, {id: "fruitsRadio"}),
+  create("span", "メッセージ"),
+  create("textarea", null, { name: "message" }),
+  create("button", "追加", { type: "button", events: { click: addData } }),
+];
+
+const form = create("form", formParts, {name: "asideForm"});
+
+const main = create("main", create("article", [
+  create("h2", "ハンバーグを食べたよ！"),
+  "さいさいは昨日ハンバーグを食べたよ！",
+  create("section", [create("h3", "どこでハンバーグを食べたの？"), "びっくり●ンキーに行って食べたよ！"]),
+  create("section", [
+    create("h3", "どうしてハンバーグを食べたの？"), "こないだアメ●ーーク！のハンバーグ芸人を見たからだよ！"
+  ])
+]));
+const header = create("header", "へっだぁだよ");
+const footer = create("footer", "ふったぁだよ");
+const aside  = create("aside", [create("span", "あさいどだよ"), form]);
+
+const contents = create("div", [aside, main]);
+const all = [header, contents, footer];
+$("body").append(...all);
+
+
+function aesfvsdfgas(params) {
+  // 下部に得られたネットワーク部を追加
+  const style = create("style", `table#index-${index}::after { content: "Network:${network.join(".")}"; }`);
+  table.appendChild(style);
+}

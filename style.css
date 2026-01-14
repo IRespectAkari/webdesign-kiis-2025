@@ -1,0 +1,41 @@
+body > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 5vw;
+  margin: 0 5em;
+
+  aside {
+    /* width: 15vw; */
+    flex-grow: 1;
+
+    > span:first-child {
+      border-bottom: solid black 1px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1em;
+
+      #fruitsRadio {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  main {
+    width: 75vw;
+  }
+}
+
+header {
+  text-align: center;
+  border-bottom: solid black 1px;
+  margin-bottom: 1em;
+}
+footer {
+  text-align: center;
+  border-top: solid black 1px;
+  margin-top: 1em;
+}

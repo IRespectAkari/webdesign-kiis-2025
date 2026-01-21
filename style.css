@@ -1,16 +1,26 @@
 body > div {
-  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   gap: 5vw;
   margin: 0 5em;
 
   aside {
-    min-width: 20vw;
+    min-width: min(15vw, 20em);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: stretch;
+
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    hr {
+      color: white;
+      display: block;
+      width: 100%;
+    }
 
     > span:first-child {
       border-bottom: solid black 1px;
@@ -22,6 +32,10 @@ body > div {
       flex-direction: column;
       align-items: flex-start;
       gap: 1em;
+
+      > input {
+        width: 14vw;
+      }
 
       #fruitsRadio {
         display: flex;
@@ -35,25 +49,8 @@ body > div {
     margin-bottom: 1em;
     flex-direction: column;
     gap: 1em;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     article {
-      background-color: #ffffffa1;
-      border-radius: 10px;
-      padding: 10px;
 
       h2 {
         margin: 0 0 0.5em 0;
@@ -68,11 +65,36 @@ body > div {
       }
     }
   }
+  #comment {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    gap: 1em;
+
+    h3 {
+      border-left: solid #57bcec 5px;
+      padding: 0.2em;
+      padding-left: 0.5em;
+      background-color: #ffffffa1;
+      margin-top: 0;
+    }
+
+  }
+}
+
+aside,
+article,
+.comment {
+  background-color: #ffffffa1;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 body {
   background-image: url(https://storage.googleapis.com/studio-cms-assets/projects/9YWy1peXWM/s-2208x1242_v-frms_webp_25603875-f6e8-4e3e-ba79-dea34a163dd0_middle.png);
   background-size: cover;
+  backdrop-filter: blur(5px);
+  margin: 0;
 }
 
 header {

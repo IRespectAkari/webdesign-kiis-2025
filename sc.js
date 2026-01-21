@@ -34,18 +34,37 @@ const formParts = [
 
 const form = create("form", formParts, {name: "asideForm"});
 
-const main = create("main", create("article", [
-  create("h2", "ハンバーグを食べたよ！"),
-  "さいさいは昨日ハンバーグを食べたよ！",
-  create("section", [create("h3", "どこでハンバーグを食べたの？"), "びっくり●ンキーに行って食べたよ！"]),
-  create("section", [
-    create("h3", "どうしてハンバーグを食べたの？"), "こないだアメ●ーーク！のハンバーグ芸人を見たからだよ！"
-  ])
-]));
-const header = create("header", "へっだぁだよ");
-const footer = create("footer", "ふったぁだよ");
-const aside  = create("aside", [create("span", "あさいどだよ"), form]);
+const links = create("div");
 
+const mainData = articleData.map(d => {
+  const article = create("article", [
+    create("h2", d.title),
+    d.sub,
+    d.sections.map(dd => create("section", [
+      create("h3", dd.title),
+      dd.p
+    ]))
+  ].flat());
+  return article;
+});
+const main = create("main", mainData);
+// const main = create("main", create("article", [
+//   create("h2", "クラフロ配信開始！！"),
+//   "前作のCraft Warriorsがサービス終了して早1年…パワーアップして遂に復活！",
+//   create("section", [
+//     create("h3", "何が違うの？"),
+//     "前作は簡単に言えばクラクラ（クラッシュオブクラン）のボクセルバージョンだったが、今作ではキャラを自ら動かせる！"
+//   ]),
+//   create("section", [
+//     create("h3", "面白い？"),
+//     "おもしろい！自ら組み立てた城から出撃し、攻め入ってくる敵たちを仲間と協力して倒すという展開がとても楽しいよ！",
+//   ])
+// ]));
+const header = create("header", "Craft Warriors Frontier 攻略の記し");
+const footer = create("footer", "ふったぁだよ");
+const aside  = create("aside", [create("span", "あさいどだよ"), links, form]);
+
+// const contents = create("div", [aside, main]);
 const contents = create("div", [aside, main]);
 const all = [header, contents, footer];
 $("body").append(...all);

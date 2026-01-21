@@ -1,4 +1,5 @@
 body > div {
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   gap: 5vw;
@@ -29,8 +30,49 @@ body > div {
     }
   }
   main {
+    display: flex;
     width: 60vw;
+    margin-bottom: 1em;
+    flex-direction: column;
+    gap: 1em;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    article {
+      background-color: #ffffffa1;
+      border-radius: 10px;
+      padding: 10px;
+
+      h2 {
+        margin: 0 0 0.5em 0;
+      }
+
+      section {
+        h3 {
+          border-left: solid #57bcec 5px;
+          padding: 0.2em;
+          padding-left: 0.5em;
+        }
+      }
+    }
   }
+}
+
+body {
+  background-image: url(https://storage.googleapis.com/studio-cms-assets/projects/9YWy1peXWM/s-2208x1242_v-frms_webp_25603875-f6e8-4e3e-ba79-dea34a163dd0_middle.png);
+  background-size: cover;
 }
 
 header {
@@ -43,3 +85,5 @@ footer {
   border-top: solid black 1px;
   margin-top: 1em;
 }
+
+

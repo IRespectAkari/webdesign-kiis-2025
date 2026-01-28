@@ -53,14 +53,19 @@ body > div {
     article {
 
       h2 {
+        font-size: 1.5rem;
+        padding-left: 10px;
+        border-left: 5px solid #007bff;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
         margin: 0 0 0.5em 0;
       }
 
       section {
         h3 {
-          border-left: solid #57bcec 5px;
-          padding: 0.2em;
-          padding-left: 0.5em;
+          border-left: 4px solid #55cba6;
+          padding-left: 8px;
+          margin-top: 20px;
         }
       }
     }
@@ -87,7 +92,17 @@ article,
 .comment {
   background-color: #ffffffa1;
   border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.comment {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin: 0;
+  }
 }
 
 body {
@@ -108,4 +123,34 @@ footer {
   margin-top: 1em;
 }
 
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* 送信ボタンなど */
+button, input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+
+  button:hover {
+    opacity: 0.8;
+  }
+}
+
+body {
+  font-family: "UD デジタル 教科書体 N-R", "UDDigital教科書体 N-R", "Segoe UI", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
 

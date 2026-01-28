@@ -133,7 +133,6 @@ textarea {
     box-sizing: border-box;
 }
 
-/* 送信ボタンなど */
 button, input[type="submit"] {
   background-color: #007bff;
   color: white;

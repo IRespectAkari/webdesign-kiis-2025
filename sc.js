@@ -51,7 +51,8 @@ const aList = Object.entries(linklist).map(([t,url])=>create("a", t, {href: url}
 
 const links = create("div", aList);
 
-const mainData = articleData.map(d => [
+const mainData = articleData
+  .map(d => [
     create("h2", d.title),
     create("span", d.sub),
     d.sections.map(dd => create("section", [
@@ -71,16 +72,12 @@ const commentList = [
   ["キラ", "りんご", "マジお勧め"],
   ["ゆうと", "バナナ", "4回まで報酬多めだよ！"],
   ["サトシ", "いちご", "よき"],
-].map(([name, fruits, message]) => {
-  const text = [
-    create("p", [`名前：`, name]),
-    create("p", [`好きな果物：`, fruits]),
-    create("p", [`メッセージ：`, message]),
-  ];
+]
+.map(([name, fruits, message]) => [`名前：${name}`, `好きな果物：${fruits}`, `メッセージ：${message}`])
+.map(ary => ary.map(Wrap("P")))
+.map(text => create("div", text, {className: "comment"}));
 
-  return create("div", text, {className: "comment"});
-});
-const comments = create("div", [create("h3", "コメント欄")].concat(commentList), {id: "comment"});
+const comments = create("div", [create("h3", "コメント欄"), commentList].flat(), {id: "comment"});
 
 // const contents = create("div", [aside, main]);
 const contents = create("div", [aside, main, comments]);
